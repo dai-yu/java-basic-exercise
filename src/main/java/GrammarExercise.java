@@ -29,6 +29,7 @@ public class GrammarExercise {
                 .map(String::toUpperCase)
                 .peek(s -> {if(s.equals("") || !s.matches("[a-zA-Z]+"))throw new RuntimeException();})
                 .filter(s -> stringList.contains(s))
+                .sorted()
                 .map(s -> String.join(" ",s.split("")))
                 .collect(Collectors.toList());
     }
